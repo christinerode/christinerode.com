@@ -15,21 +15,9 @@
 	<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 	<link rel="stylesheet" href="css/main.css?v=1">
+	<link rel="stylesheet" href="css/jquery.modal.css">
 	<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/789260/724224/css/fonts.css" />
-<link href="https://fonts.googleapis.com/css?family=NTR" rel="stylesheet">
-
-<!-- Grab latest version of jQuery -->
-<script type="text/javascript"
-  src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js">
-</script>
-
-<!-- Include the hashgrid script -->
-<script type="text/javascript" src="grid.js"></script>
-
-<!-- Kick hashgrid into action -->
-<script type="text/javascript">
-var grid = new hashgrid({ numberOfGrids: 2 });
-</script>
+	<link href="https://fonts.googleapis.com/css?family=NTR" rel="stylesheet">
 
 	
 	<!-- !Modernizr - All other JS at bottom -->
@@ -51,13 +39,13 @@ var grid = new hashgrid({ numberOfGrids: 2 });
 
 	<h1>Christine Røde</h1>
 	
-	<p class="intro" style="text-indent: 0px;">is a designer doing <a href="#">product design</a> and <a href="#">branding</a>. She's fascinated the intersection of traditional craft with new technology, and likes work that includes both programming and scissors alike.</p>
-	<p class="intro">She's lived and worked in Oslo, San Francisco and London, and currently resides in Amsterdam. Until recently, she <b>designed products for Facebook</b>. Today, she just wants to make <em>things that delight</em><span>*</span>.</p>
+	<p class="intro" style="text-indent: 0px;">is a designer doing <a href="product.html" rel="modal:open">product design</a> and <a href="#">branding</a>. She's fascinated the intersection of traditional craft<span>∞</span> with new technology<span>∆</span>, and likes work that includes both programming and scissors alike.</p>
+	<p class="intro">She's lived and worked in Oslo, San Francisco and London, and currently resides in Amsterdam. Until recently, she <a href="#">designed products for Facebook</a>. Today, she just wants to make things that delight<span>*</span>.</p>
 	
 	
-	<div class="box small" id="box-1"></div>
+	<div class="box large" id="box-1"></div>
 	<div class="box small" id="box-2"></div>
-	<div class="box large" id="box-3"></div>
+	<div class="box small" id="box-3"></div>
 	<div class="box large" id="box-4"></div>
 	<div class="box small" id="box-5"></div>
 	
@@ -83,11 +71,24 @@ var grid = new hashgrid({ numberOfGrids: 2 });
 		</p>
 		
 	</div>	
+	
+	
+	<section>
+		<div class="header"></div>
+		<h2>Product Design</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac diam sapien. Ut ornare nulla vitae nibh rhoncus ultricies. Fusce dapibus dui eget interdum porttitor. Praesent volutpat, eros a efficitur semper, velit tortor vestibulum leo, at.</p>
+	</section>
+	
+	<section>
+		<div class="header"></div>
+		<h2>Branding<br /> & Graphic Design</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac diam sapien. Ut ornare nulla vitae nibh rhoncus ultricies. Fusce dapibus dui eget interdum porttitor. Praesent volutpat, eros a efficitur semper, velit tortor vestibulum leo, at.</p>
+	</section>
 
 
 	<!-- !Javascript - at the bottom for fast page loading -->
 	<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-	<script>!window.jQuery && document.write('<script src="js/jquery-1.4.2.min.js"><\/script>')</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script src="js/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

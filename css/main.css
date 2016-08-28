@@ -71,7 +71,8 @@ label, input[type=button], input[type=submit], button {
   /* Pretty Modern Browsers */ }
 
 html {
-  border: 10px solid black; }
+  border: 10px solid black;
+  background-color: black; }
 
 body {
   background-color: #F5F5F5;
@@ -115,7 +116,7 @@ h1 {
   @media (min-width: 1024px) {
     h1 {
       font-size: 60px;
-      margin: 80px 0px 12px 100px; } }
+      margin: 80px 0px 12px 80px; } }
 
 /* PRIMARY PARAGRAPHS */
 p {
@@ -132,7 +133,7 @@ p.intro {
     p.intro {
       font-size: 32px;
       line-height: 42px;
-      margin-left: 100px;
+      margin-left: 80px;
       margin-bottom: 24px;
       text-indent: 56px;
       max-width: 700px; } }
@@ -143,9 +144,42 @@ p a {
   font-style: italic;
   color: black; }
 
+/* MAIN SECTIONS */
+section {
+  margin-left: -20px;
+  margin-bottom: 80px; }
+  section div.header {
+    background-color: rgba(0, 0, 0, 0.5); }
+    @media (min-width: 1024px) {
+      section div.header {
+        width: 780px;
+        height: 240px;
+        margin-bottom: -100px; } }
+  section h2 {
+    font-family: 'NoeDisplayBlack', serif;
+    font-style: italic;
+    font-size: 32px; }
+    @media (min-width: 1024px) {
+      section h2 {
+        font-size: 60px;
+        margin: 24px 0px 12px 100px; } }
+  @media (min-width: 1024px) {
+    section p {
+      font-size: 24px;
+      margin: 0px 0px 12px 100px;
+      max-width: 700px; } }
+
+/* ARTICLES */
+article h1 {
+  display: block;
+  margin: 48px auto 0px auto;
+  text-align: center;
+  font-size: 72px;
+  font-style: italic; }
+
 /* TEXT BREAK */
 div.blurb {
-  min-height: 300px;
+  min-height: 150px;
   color: #A7A7A7;
   margin-left: -20px; }
   @media (min-width: 1024px) {
@@ -161,14 +195,6 @@ div.blurb {
         width: 300px;
         float: left;
         margin-right: 12px; } }
-
-div.box.small {
-  width: 60px;
-  height: 60px; }
-
-div.box.large {
-  width: 120px;
-  height: 120px; }
 
 /* ASIDES */
 aside {
@@ -195,67 +221,35 @@ aside {
         display: block;
         width: 280px;
         position: absolute;
-        top: 280px;
+        top: 180px;
         left: 840px; } }
 
-/**
- * Grid
- */
-#grid {
-  /* Dimensions - same width as your grid with gutters */
-  width: 780px;
-  /* Grid (left-aligned)
-    position: absolute;
-    top: 0;
-    left: 0;
-    */ }
-
-/**
- * Vertical grid lines
- *
- * Set the column width taking the borders into consideration,
- * and use margins to set column gutters.
- */
-#grid div.vert {
-  width: 60px;
-  border: solid darkturquoise;
-  border-width: 0 1px;
-  margin-right: 0px; }
-
-#grid div.vert.first-line {
-  margin-left: 0px; }
-
-/**
- * Horizontal grid lines, defined by your base line height
- *
- * Remember, the CSS properties that define the box model:
- * visible height = height + borders + margins + padding
- */
-#grid div.horiz {
-  /* 20px line height */
-  height: 20px;
-  border-bottom: 1px dotted darkgray;
-  margin: 0;
-  padding: 0; }
-
-/**
-* Classes for multiple grids
-*
-* When using more than one grid, remember to set the numberOfGrids 
-* option in the hashgrid.js file.
-*/
-#grid.grid-1 div.vert {
-  /* Vertical grid line colour for grid 1 */
-  border-color: darkturquoise; }
-
-#grid.grid-2 {
-  /* Adjustments */
-  padding: 0 160px;
-  width: 660px; }
-
-#grid.grid-2 div.vert {
-  /* Vertical grid line colour for grid 2 */
-  border-color: crimson; }
+/* BOXES */
+div.box {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.15); }
+  div.box.small {
+    width: 60px;
+    height: 60px; }
+  div.box.large {
+    width: 120px;
+    height: 120px; }
+  @media (min-width: 1024px) {
+    div.box#box-1 {
+      top: -30px;
+      left: 600px; }
+    div.box#box-2 {
+      top: 320px;
+      left: 840px; }
+    div.box#box-3 {
+      top: 400px;
+      left: 0px; }
+    div.box#box-4 {
+      top: 600px;
+      left: 900px; }
+    div.box#box-5 {
+      top: 540px;
+      right: 10px; } }
 
 /* Mobile first queries */
 /* Larger than mobile */
