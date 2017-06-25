@@ -3,6 +3,12 @@
     Version 0.7.1
 */
 
+function gaTrack(path, title) {
+	  ga('set', { page: path, title: title });
+	  ga('send', 'pageview');
+	}
+
+
 (function (factory) {
   // Making your jQuery plugin work better with npm tools
   // http://blog.npmjs.org/post/112712169830/making-your-jquery-plugin-work-better-with-npm
@@ -41,6 +47,9 @@
     modals.push(this);
     if (el.is('a')) {
       target = el.attr('href');
+      
+      gaTrack(target, target.charAt(0).toUpperCase() + target.slice(1));
+      
       //Select element by id from href
       if (/^#/.test(target)) {
         this.$elm = $(target);
@@ -107,6 +116,8 @@
       this.hide();
       if (!$.modal.isActive())
         $(document).off('keydown.modal');
+        
+       
     },
 
     block: function() {
@@ -138,13 +149,31 @@
       if (this.options.showClose) {
         this.closeButton = $('<a href="#close-modal" rel="modal:close" class="close-modal ' + this.options.closeClass + '">' + this.options.closeText + '</a>');
         this.$elm.append(this.closeButton);
+        
+        $("header div.close").css("display", "block");
       }
       this.$elm.addClass(this.options.modalClass).appendTo(this.$blocker);
       
+      
+      // I added this for responsivenesses
+      
       var screenwidth = $( window ).width();
-      var modalwidth = screenwidth-200;
+      
+      if(window.innerWidth > 860) {
+     	 var modalwidth = screenwidth-200;
+	  }
+	  
+	  if(window.innerWidth < 860 && window.innerWidth > 710) {
+     	 var modalwidth = screenwidth-20;
+	  }
+	  
+	  if(window.innerWidth < 710) {
+     	 var modalwidth = screenwidth;
+	  }
       
       this.$elm.css('width', modalwidth);
+      
+      // End custom
       
       if(this.options.doFade) {
         this.$elm.css('opacity',0).show().animate({opacity: 1}, this.options.fadeDuration);
@@ -157,6 +186,7 @@
     hide: function() {
       this.$elm.trigger($.modal.BEFORE_CLOSE, [this._ctx()]);
       if (this.closeButton) this.closeButton.remove();
+      $("header div.close").css("display", "none");
       var _this = this;
       if(this.options.doFade) {
         this.$elm.fadeOut(this.options.fadeDuration, function () {
@@ -193,6 +223,10 @@
     if (event) event.preventDefault();
     var current = getCurrent();
     current.close();
+    $(".border").removeClass("product");
+    $(".border").removeClass("graphic");
+    $("html").removeClass("product-hover");
+    $("html").removeClass("graphic-hover");
     return current.$elm;
   };
 

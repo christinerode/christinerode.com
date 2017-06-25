@@ -1,6 +1,244 @@
-h1 {
-  display: block;
-  margin: 48px auto 0px auto;
+/**
+ *   Default variables
+ *
+ *   While these can be set with JavaScript, it's probably
+ *   better and faster to just set them here, compile to
+ *   CSS and include that instead to use some of that
+ *   hardware-accelerated goodness.
+ */
+/* ARTICLE STYLES */
+div#close {
   text-align: center;
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 6px;
+  left: 0px; }
+  div#close a {
+    background-color: black;
+    color: white;
+    padding: 2px; }
+
+h1 {
+  display: inline-block;
+  margin: 48px auto 12px auto;
   font-size: 72px;
-  font-style: italic; }
+  font-family: "NoeDisplayBlackItalic", serif; }
+  @media (min-width: 710px) {
+    h1 {
+      /* background: url(../img/h1stroke.png) repeat-x bottom left; 
+		line-height: 60px; */
+      margin-top: 120px; } }
+  @media (max-width: 709px) {
+    h1 {
+      padding: 24px;
+      line-height: 72px;
+      text-align: center; } }
+
+summary {
+  text-align: center;
+  font-family: "FFBauWebPro", sans-serif;
+  font-size: 11px;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-left: 24px;
+  padding-right: 24px; }
+  summary span {
+    display: block;
+    margin-top: 4px;
+    font-family: "Quarto A", "Quarto B", serif;
+    font-style: italic;
+    text-transform: none;
+    color: #ABABAB;
+    font-size: 13px;
+    letter-spacing: 1px; }
+
+div#description {
+  display: block;
+  max-width: 720px;
+  margin: 48px auto 0px auto;
+  padding: 20px;
+  border: 3px solid black; }
+  @media (min-width: 710px) {
+    div#description {
+      -webkit-column-count: 2;
+      /* Chrome, Safari, Opera */
+      -moz-column-count: 2;
+      /* Firefox */
+      -webkit-column-gap: 40px;
+      /* Chrome, Safari, Opera */
+      -moz-column-gap: 40px;
+      /* Firefox */
+      -webkit-column-rule: 1px solid black;
+      /* Chrome, Safari, Opera */
+      -moz-column-rule: 1px solid black;
+      /* Firefox */
+      column-rule: 1px solid black; } }
+  @media (min-width: 710px) and (max-width: 859px) {
+    div#description {
+      margin: 48px auto 0 auto;
+      max-width: 80%; } }
+  @media (max-width: 709px) {
+    div#description {
+      margin: 24px; } }
+  div#description p {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    font-family: "FFBauWebPro", sans-serif; }
+    div#description p em {
+      font-weight: 600; }
+
+img {
+  width: 100%;
+  position: relative; }
+
+div.content {
+  max-width: 800px;
+  margin: 60px auto 0px auto;
+  text-align: left; }
+  @media (min-width: 710px) {
+    div.content {
+      padding: 0px 60px 0px 60px; } }
+  @media (max-width: 709px) {
+    div.content {
+      padding: 0px 24px 0px 24px; } }
+  div.content hr {
+    width: 50%;
+    display: block;
+    margin: 100px auto 100px auto;
+    /* height: 10px;
+		background-color: $color-product;
+		color: $color-product;
+		border: none; */
+    background: url(../img/squiggly@2x.png) top left repeat-x;
+    height: 6px;
+    background-size: 207px 6px;
+    border: none; }
+    @media (max-width: 709px) {
+      div.content hr {
+        margin: 60px auto 60px auto; } }
+  div.content h3 {
+    width: 100%;
+    padding: 0px;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "FF Bau Pro Medium", "FFBauWebPro", sans-serif; }
+  div.content img {
+    margin: 0 auto 0 auto; }
+    div.content img.header {
+      width: 100%;
+      margin: 40px auto 60px auto; }
+    div.content img.twoup {
+      height: 250px;
+      margin-right: 12px;
+      width: auto; }
+    div.content img.center {
+      margin: 0px auto 0px auto;
+      display: block; }
+    div.content img.space {
+      margin-top: 40px; }
+  div.content video {
+    margin: 0 auto 0 auto;
+    display: block; }
+    div.content video.phone {
+      max-width: 320px; }
+  div.content p {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 600px;
+    font-family: "FFBauWebPro", sans-serif; }
+    div.content p.left {
+      margin: 0 0 0 0;
+      text-align: left; }
+    div.content p.center {
+      margin: 0 auto 0 auto;
+      text-align: center; }
+  div.content p.intro {
+    font-family: "Quarto A", "Quarto B", serif;
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    text-indent: 0px;
+    margin: 20px auto 40px auto; }
+  div.content div.slider ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px; }
+  div.content div.endnote {
+    clear: both;
+    text-align: center;
+    font-family: "Quarto A", "Quarto B", serif;
+    font-style: italic;
+    font-size: 20px;
+    color: #c2c2c2;
+    margin: 40px auto 12px auto; }
+    div.content div.endnote a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid #c2c2c2; }
+      div.content div.endnote a:hover {
+        border: none; }
+
+div.grid {
+  display: block;
+  width: 100%;
+  box-sizing: border-box; }
+  div.grid .half-fit {
+    width: 50%;
+    float: left; }
+    @media (max-width: 709px) {
+      div.grid .half-fit {
+        width: 100%; } }
+  div.grid .half-space {
+    width: 48%;
+    float: right;
+    box-sizing: border-box; }
+    div.grid .half-space:first-child {
+      margin-right: 12px;
+      float: left; }
+    @media (max-width: 709px) {
+      div.grid .half-space {
+        width: 100%;
+        margin-right: 0px; } }
+  div.grid .two-third {
+    width: 66%;
+    float: left; }
+  div.grid .one-third {
+    width: 33%;
+    float: left; }
+  div.grid .new-line {
+    clear: both;
+    margin-top: 12px;
+    height: 20px; }
+  div.grid .background {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-align: center center;
+    height: 320px; }
+  div.grid .full {
+    clear: both;
+    margin-top: 12px;
+    width: 100%;
+    height: 400px; }
+
+div.endclose {
+  width: 100%;
+  margin: 0px auto 80px auto;
+  padding: 24px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "FFBauWebPro", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+  div.endclose a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 10px 6px 6px 6px;
+    border: 1px solid black; }
+    div.endclose a:hover {
+      background-color: #000000;
+      color: white; }

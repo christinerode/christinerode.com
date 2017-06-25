@@ -1,0 +1,67 @@
+$color-product: #7EDCD7; /* Teal: #00FFC8 - Purple: #352C7B - Chill: #14609C */
+$color-graphic: #E77D9B;
+
+$color-background: #F5F5F5; 
+$color-background-dark: #000000;
+
+$color-type-key: #000000;
+$color-type-light: darken($color-background, 20%);
+
+$type-display: 'NoeDisplayBlack', serif;
+$type-display-italic: 'NoeDisplayBlackItalic', serif;
+$type-primary: "Quarto A", "Quarto B", serif;
+$type-secondary: 'FFBauWebPro', sans-serif;
+$type-secondary-medium: 'FFBauWebProMedium', sans-serif;
+$type-small: "Mercury SSm A", "Mercury SSm B", serif;
+
+$tablet-width: 710px;
+$desktop-width: 860px;
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+
+@mixin rotated-text($num-letters: 100, $angle-span: 180deg, $angle-offset: 0deg) {
+	$angle-per-char: $angle-span / $num-letters;
+		@for $i from 1 through $num-letters {
+		.char#{$i} {
+			@include transform(rotate($angle-offset + $angle-per-char * $i))
+		}
+	}
+}
+
+
+
+/**
+ *   Default variables
+ *
+ *   While these can be set with JavaScript, it's probably
+ *   better and faster to just set them here, compile to
+ *   CSS and include that instead to use some of that
+ *   hardware-accelerated goodness.
+ */
+ 
+//  Unslider 2 has navigation styles pre-designed. You can turn it off here.
+$unslider-dot-navigation: false;
+$unslider-dot-colour: #fff;
+
+//  Unslider 2 has navigation styles pre-designed. You can turn it off here.
+$unslider-transition-function: cubic-bezier(.42,0,.58,1);
+
+// Set a namespace for Unslider
+$unslider-namespace: 'unslider';

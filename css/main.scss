@@ -1,26 +1,10 @@
-$tablet-width: 768px;
-$desktop-width: 1024px;
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/339c9f");
 
-$color-product: #00FFC8;
-$color-graphic: #FF6767;
+@import "variables";
 
-@mixin mobile {
-  @media (max-width: #{$tablet-width - 1px}) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: #{$desktop-width}) {
-    @content;
-  }
-}
+/* @import 'unslider/reset';
+@import 'unslider/dots'; */
 
 
  html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
@@ -45,52 +29,140 @@ label, input[type=button], input[type=submit], button { cursor: pointer }
 	  src: url('../font/Noe Display Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
 	       url('../font/Noe Display Black.woff') format('woff'); /* Pretty Modern Browsers */
 	}
+	
+	@font-face {
+	  font-family: 'NoeDisplayBlackItalic';
+	  src: url('../font/Noe Display Black Italic.eot'); /* IE9 Compat Modes */
+	  src: url('../font/Noe Display Black Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	       url('../font/Noe Display Black Italic.woff') format('woff'); /* Pretty Modern Browsers */
+	}
+  
+		@font-face {font-family: 'FFBauWebProMedium';src: url('../font/339C9F_0_0.eot');src: url('../font/339C9F_0_0.eot?#iefix') format('embedded-opentype'),url('../font/339C9F_0_0.woff2') format('woff2'),url('../font/339C9F_0_0.woff') format('woff'),url('../font/339C9F_0_0.ttf') format('truetype');}
+		 
+		  
+		@font-face {font-family: 'FFBauWebPro';src: url('../font/339C9F_1_0.eot');src: url('../font/339C9F_1_0.eot?#iefix') format('embedded-opentype'),url('../font/339C9F_1_0.woff2') format('woff2'),url('../font/339C9F_1_0.woff') format('woff'),url('../font/339C9F_1_0.ttf') format('truetype');}
+ 
 
 
 
 html {
-	border: 10px solid black;
+/*	border: 10px solid black; */
 	background-color: black;
+	overflow-x: hidden;
 }
 
+	html.product {
+		border-color: $color-product;
+	}
+
 body {
-	background-color: #F5F5F5;
+	background-color: $color-background;
 	min-height: 700px; 
 	padding: 20px;
+	overflow-x: hidden;
+	color: $color-type-key;
 }
 
 /* FLOATING HEADER */
 
 header {
 	position: fixed;
-	top: 16px;
-	left: 16px;
+	top: 30px;
+	left: 0px;
+	z-index: 14;
 	width: 100%;
-	padding-right: 24px;
+	
+	font-family: $type-secondary;
+	text-transform: uppercase;
+	font-size: 10px;
+	letter-spacing: 1px;
+
+	
+	@include mobile {
+		position: relative;
+		top: 0px;
+	}
 	
 	span { 
-		margin-left: 12px;
+		margin-left: 24px;
+		float: left;
 		
 		@include desktop {
-			margin-left: 100px;
+			margin-left: 120px;
+		}
+		
+		@include mobile {
+			margin-left: 0px;
+		}
+		
+		@include tablet {
+			margin-left: 70px;
 		}
 	}
 
 	ul {
+		z-index: 20;
+		position: relative;
 		float: right;
-		padding: 0px 32px 0px 12px;
+		padding: 0px 0px 0px 0px;
+		
+		@include desktop {
+			margin-right: 32px;
+		}
 	}
 
-	ul, ul li {
+	ul li {
 		display: inline;
 		list-style-type: none;
-		font-family: sans-serif;
+		margin-top: 10px;
 		text-align: right;
-		font-size: 12px;
-	
+			
 		a {
 		text-decoration: none;
-		font-weight: bold;
+		color: $color-type-key;
+		
+			&:hover {
+				background-color: $color-product;
+			}
+		}
+	}
+	
+	li {
+		&:after {
+			font-size: 10px;
+			letter-spacing: 2px;
+			vertical-align: middle;
+			content: " / ";
+		}
+	
+	}
+	
+	li:last-child:after {
+		content: "";
+	}
+	
+	div.close {
+		text-align: center;
+		display: none;
+		width: 100%;
+		position: fixed;
+		z-index: 13;
+		
+			@include tablet {
+				text-align: left;
+				margin-left: 70px;
+			}
+			
+			@include mobile {
+				text-align: left;
+				margin-left: 0px;
+			}
+				
+		a {
+			background-color: black;
+			color: white;
+			padding: 3px;
+			text-decoration: none;
 		}
 	}
 	
@@ -101,51 +173,121 @@ header {
 
 h1 {
 		text-align: left;
-		font-size: 60px;
-		font-family: 'NoeDisplayBlack', serif;
+		font-family: $type-display;
+		font-size: 40px;
 		
-		font-size: 32px;
+		background: url(../img/product.jpg);
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
 		
 		@include mobile {
-			margin-top: 24px;
+			margin-top: 40px;
+		}
+		
+		@include desktop {
+			font-size: 72px;
+			margin: 100px 0px 12px 100px;
+		}
+		
+		@include tablet {
+			margin-left: 50px;
+		}
+}
+
+	h2 {
+		font-family: $type-display-italic;
+		font-size: 40px;
+		
+		a {
+			color: inherit;
+			text-decoration: none;
 		}
 		
 		@include desktop {
 			font-size: 60px;
-			margin: 80px 0px 12px 80px;
 		}
-}
+	}
 
 
-/* PRIMARY PARAGRAPHS */
+
+/* PRIMARY TYPOGRAPHY STYLES AND PARAGRAPHS */
 
 p {
-	font-family: "Sentinel A", "Sentinel B";
+	font-family: $type-primary;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 300;
+	
+	span {
+		font-family: "Mercury SSm A", "Mercury SSm B";
+		font-weight: 400;
+		display: inline-block;
+		padding-left: 4px;
+	}
+	
+	&.intro span {
+		font-size: 50%;
+		vertical-align: top;
+		margin-top: -8px;
+		margin-left: -3px;
+	}
 }
 
 	p.intro {		
-		font-size: 24px;
+		font-size: 27px;
 		line-height: 32px;
 		margin-bottom: 18px;
 		text-indent: 32px;
+		max-width: 540px;
 
 		@include desktop {
-			font-size: 32px;
+			font-size: 34px;
 			line-height: 42px;
-			margin-left: 80px;
+			margin-left: 100px;
 			margin-bottom: 24px;
 			text-indent: 56px;
-			max-width: 700px;
+			max-width: 680px;
 		}
+		
+		@include tablet {
+			margin-left: 50px;
+			max-width: 640px;
+		}
+		
+		em {
+			font-style: normal;
+			cursor: pointer;
+			
+			&:hover {
+				border-bottom: 1px dotted $color-type-light;
+			
+				span {
+					color: $color-product;
+				}
+			}
+		}
+		
+		
 	}
 	
 	p a {
 		border-bottom: 3px solid black;
 		text-decoration: none;
 		font-style: italic;
-		color: black;
+		color: $color-type-key;
+		
+		&:hover {
+			
+		}
+		
+		&.product-link:hover {
+			color: $color-product;
+			border-color: $color-product;
+		}
+		
+		&.graphic-link:hover {
+			color: $color-graphic;
+			border-color: $color-graphic;
+		}
 	}
 	
 
@@ -153,27 +295,77 @@ p {
 	
 section {
 	margin-left: -20px;
-	margin-bottom: 80px;
+			cursor: pointer;
+
+	
+	
+	@include desktop {
+		width: 780px;
+		margin-bottom: 80px;
+	}
+	
+	@include tablet {
+		width: 720px;
+	}
+	
+	@include mobile {
+		margin-top: 48px;
+		margin-bottom: 48px;
+	}
+	
+	&.product .header {
+		background-image: url('../img/product6-white.jpg');
+	}
+	
+	&.graphic .header {
+		background-image: url('../img/graphic-3.jpg');
+	}
 	
 	div.header {
-
 		background-color: rgba(0,0,0,0.5);
+		background-size: cover;
+		background-position-x: right;
 		
 		@include desktop {
 			width: 780px;
-			height: 240px;
+			height: 280px;
 			margin-bottom: -100px;
+		}
+		
+		@include tablet {
+			width: 110%;
+		}
+		
+		@include mobile {
+			width: 110%;
+			height: 180px;
+			margin-top: 40px;
+			margin-left: 0px;
+			margin-right: 0px;
+			margin-bottom: 12px;
 		}
 	}
 	
 	h2 {
-		font-family: 'NoeDisplayBlack', serif;
-		font-style: italic;
+		font-family: $type-display-italic;
 		font-size: 32px;
+		
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
 		
 		@include desktop {
 			font-size: 60px;
-			margin: 24px 0px 12px 100px;
+			margin: 24px 0px 12px 120px;
+		}
+		
+		@include tablet {
+			margin-left: 70px;
+		}
+		
+		@include mobile {
+			margin: 6px 0px 6px 24px;
 		}
 	}
 	
@@ -181,8 +373,44 @@ section {
 		
 		@include desktop {
 			font-size: 24px;
-			margin: 0px 0px 12px 100px;
+			line-height: 32px;
+			margin: 0px 0px 12px 120px;
 			max-width: 700px;
+		}
+		
+		@include tablet {
+			margin-left: 70px;
+			max-width: 600px;
+		}
+		
+		@include mobile {
+			font-size: 22px;
+			line-height: 28px;
+			margin: 0px 0px 6px 24px;
+			max-width: 540px;
+		}
+	}
+	
+	&:hover {
+		
+		&.product .header {
+			/* background-image: url('../img/product6.png'); */
+		}
+		
+		&.product h2 {
+			color: $color-product;
+		}
+		
+		&.graphic h2 {
+			color: $color-graphic;
+		}
+		
+		&.product a {
+			border-color: $color-product;
+		}
+		
+		&.graphic a {
+			border-color: $color-graphic;
 		}
 	}
 	
@@ -192,6 +420,7 @@ section {
 /* ARTICLES */
 
 article {
+	text-align: center;
 	
 	@import "article.scss";
 }
@@ -203,7 +432,7 @@ article {
 
 div.blurb {
 	min-height: 150px;
-	color: #A7A7A7;
+	color: $color-type-light;
 	margin-left: -20px;
 	
 	@include desktop {
@@ -211,9 +440,20 @@ div.blurb {
 		padding-top: 40px;
 	}
 	
+	@include tablet {
+		width: 100%;
+	}
+	
+	@include mobile {
+			margin-top: 48px;
+			margin-bottom: 48px;
+			margin-left: 12px;
+			display: none;
+		}
+	
 	p {
-		font-family: 'NTR', sans-serif;
-		font-size: 14px;
+		font-family: $type-secondary;
+		font-size: 12px;
 		line-height: 18px;
 		
 		@include desktop {
@@ -221,6 +461,18 @@ div.blurb {
 			float: left;
 			margin-right: 12px;
 		}
+		
+		@include tablet {
+		width: 30%;
+		}
+		
+		@include mobile {
+			margin-right: 12px;
+		}
+	}
+	
+	&.selected p {
+		color: darken($color-type-light, 20%);
 	}
 }
 
@@ -232,7 +484,7 @@ aside {
 	background: url(../img/squiggly@2x.png) top left repeat-x, url(../img/squiggly@2x.png) bottom left repeat-x;
 	background-size: 207px 6px;
 		
-	font-family: 'NTR', sans-serif;
+	font-family: $type-secondary;
 	
 	min-height: 50px;
 	padding-top: 20px;
@@ -240,11 +492,18 @@ aside {
 	margin-right: 32px;
 	width: 207px;
 	
-	font-size: 13px;
+	font-size: 12px;
 	line-height: 18px;
-	color: #D8D8D8;
+	color: $color-type-light;
 	
 	float: left;
+	
+	strong {
+		font-weight: normal;
+		letter-spacing: 1px;
+		font-size: 11px;
+		text-transform: uppercase;
+	}
 	
 	&.left {
 		text-align: left;
@@ -252,6 +511,15 @@ aside {
 	
 	&.right {
 		text-align: right;
+	}
+	
+	&.selected {
+		color: darken($color-type-light, 20%);
+		
+		strong {
+			background-color: $color-product;
+			color: white;
+		}
 	}
 	
 	
@@ -265,20 +533,274 @@ aside {
 			top: 180px;
 			left: 840px;
 		}
+		
+		@include tablet {
+			display: none;
+		}
 	}
+	
+&.edgenote {
+		display: none;
+		
+		@include desktop {
+			display: block;
+			width: 210px;
+			position: absolute;
+			left: 840px;
+			margin-top: -380px;
+		}
+		
+		@include tablet {
+			display: none;
+		}
+	}
+
 	
 }
 
 
+div.divider {
+	background: url(../img/squiggly@2x.png) top left repeat-x;
+	height: 6px;
+	background-size: 207px 6px;
+	
+	@include desktop {
+		margin-left: 90px;
+		max-width: 670px;
+	}
+	
+	@include tablet {
+		margin-left: 40px;
+	}
+	
+	@include mobile {
+		margin-bottom: 40px;
+	}
+}
 
+
+/* LISTS */
+	
+	h3 {
+		font-family: $type-display-italic;
+		font-size: 24px;
+		
+		@include mobile {
+			margin: 0px 0px -12px 0px;
+		}
+	}
+	
+	div.column {
+		@include desktop {
+			width: 320px;
+			float: left;
+			margin-top: 40px;
+			margin-right: 36px;
+			margin-bottom: 40px;
+			
+			&.first {
+				margin-left: 90px;
+				
+				@include tablet {
+					margin-left: 40px;
+				}
+			}
+			
+			@include tablet {
+					width: 300px;
+			}
+		}
+		
+		@include mobile {
+			margin: 0px 0 40px 0px;
+			max-width: 300px;
+			float: left;
+			
+			&.first {
+			margin-right: 24px;	
+			}
+		}
+	
+		ul, ol {
+			max-width: 550px;
+			margin-top: 24px;
+			font-size: 16px;
+			line-height: 22px;
+			font-family: $type-primary;
+			
+			li {
+				margin-bottom: 8px;
+				margin-left: 24px;
+			}
+		}
+		
+		a {
+		border-bottom: 1px solid black;
+		text-decoration: none;
+		font-style: italic;
+		color: $color-type-key;
+		}
+	}
+
+
+
+/* FOOTER */
+
+footer {
+	width: 100%;
+	box-sizing: border-box;
+	position: absolute;
+	left: 0;
+	right: 0;
+	background-color: $color-background-dark;
+	min-height: 700px;
+	color: white;
+	
+		@include desktop {
+			padding: 36px;
+			padding-bottom: 72px;
+		}
+		
+	img.profiletop {
+			z-index: 6;
+			position: relative;
+		
+		@include desktop {
+			position: absolute;
+			left: 780px;
+			top: 140px;
+			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+		}
+		
+		@include tablet {
+			display: none;
+		}
+		
+		@include mobile {
+			margin-left: 24px;
+			margin-right: 24px;
+			margin-bottom: 12px;
+			float: left;
+			width: 120px;
+		}
+	}
+		
+	img.profilepic {
+		@include desktop {
+			position: absolute;
+			top: 0px;
+			left: 650px;
+			opacity: 0.5;
+			z-index: 5;
+		}
+		
+		@include tablet {
+			left: 500px;
+		}
+		
+		@include mobile {
+			position: absolute;
+			right: 0px;
+			float: right;
+			width: 200px;
+			height: 400px;
+			opacity: 0.3;
+
+		}
+	}
+	
+	h2 {
+		color: white;
+		
+		@include desktop {
+			margin-left: 90px;
+			margin-top: 24px;
+		}
+		
+		@include tablet {
+			margin-left: 40px;
+		}
+		
+		@include mobile {
+			margin-left: 24px;
+			margin-top: 24px;
+			margin-bottom: 12px;
+		}
+	}
+	
+	p {
+		position: relative;
+		color: white;
+		z-index: 7;
+		
+		
+		@include desktop {
+			margin-left: 90px;
+			max-width: 550px;
+			margin-top: 24px;
+			
+			/* Born and raised in N: */
+			font-size: 22px;
+			line-height: 36px;
+		}
+		
+		@include tablet {
+			margin-left: 40px;
+		}
+		
+		@include mobile {
+			margin-left: 24px;
+			max-width: 560px;
+			font-size: 20px;
+			line-height: 27px;
+			margin-bottom: 12px;
+			text-indent: 0px;
+			margin-right: 24px;
+		}
+		
+		a {
+			color: white;
+			border-color: white;
+		}
+		
+		&.copyright {
+			font-size: 16px;
+			color: #999;
+			font-style: italic;
+			
+			a {
+				border-bottom: none;
+			}
+		}
+	}
+	
+	
+	
+	hr {
+		border: none;
+		background-color: #333;
+		height: 1px;
+		
+		@include desktop {
+			max-width: 700px;
+			margin: 80px 0 80px 90px;
+		}
+		
+		@include mobile {
+			margin: 80px 0 80px 24px;
+		}
+	}
+	
+	
+}
 
 
 
 /* BOXES */
 
 div.box {
-	position: absolute;
-	background-color: rgba(0,0,0,0.15);
+	position: absolute;	
+	display: none;
 	
 	&.small {
 		width: 60px;
@@ -288,6 +810,11 @@ div.box {
 	&.large {
 		width: 120px;
 		height: 120px;
+		
+			background: url(../img/graphix2.png);
+	background-size: contain;
+	opacity: 0.5;
+
 	}
 	
 	@include desktop {
@@ -295,31 +822,246 @@ div.box {
 		&#box-1 {
 			top: -30px;
 			left: 600px;
+			background-color: rgba(0,0,0,0.15);
 		}
 		
 		&#box-2 {
 			top: 320px;
 			left: 840px;
+			background-color: rgba(0,0,0,0.15);
 		}
 		
 		&#box-3 {
 			top: 400px;
 			left: 0px;
+			background-color: rgba(0,0,0,0.15);
 		}
 		
 		&#box-4 {
 			top: 600px;
 			left: 900px;
+			background-color: rgba(0,0,0,0.15);
 		}
 		
 		&#box-5 {
 			top: 540px;
 			right: 10px;
+			background-color: rgba(0,0,0,0.15);
 		}
+		
+		&#stroke-1 {
+			top: 120px;
+			left: 720px;
+			
+			/* background-image: url(../img/Line.png); */
+			width: 100px;
+			height: 2px;
+			background-color: black;
+			transform: rotate(115deg);
+		}
+		
+		&#stroke-2 {
+			top: 600px;
+			left: 920px;
+			
+			/* background-image: url(../img/Line.png); */
+			width: 100px;
+			height: 2px;
+			background-color: black;
+			transform: rotate(78deg);
+		}
+		
 		
 	}
 }
+
+ol.numbers {
+	position: absolute;
+	top: 600px;
+	right: 80px;
 	
+	@include tablet {
+		right: 40px;
+	}
+	
+	@include mobile {
+		right: 5%;
+		opacity: 0.5;
+	}
+	
+	li {
+		font-size: 10px;
+		list-style-type: none;
+		margin-bottom: 180px;
+		font-family: "Mercury SSm A", "Mercury SSm B";
+		font-style: italic;
+		font-weight: 400;
+	}
+}
+
+/* Hover effects */ 
+
+html.product-hover {
+	
+	div.illus {
+		background-color: $color-product !important;
+	}
+	
+	p.intro span {
+		color: $color-product;
+	}
+	
+	header span {
+		color: $color-product;
+	}
+}
+
+html.graphic-hover {
+	
+	div.illus {
+		background-color: $color-graphic !important;
+	}
+	
+	p.intro span {
+		color: $color-graphic;
+	}
+	
+	header span {
+		color: $color-graphic;
+	}
+}
+
+div.border {
+	background: black;
+	position: fixed;
+	animation-fill-mode: both;
+	animation-delay: .1s;
+	z-index: 16;
+	
+	@include mobile {
+		display: none;
+	}
+	
+	&#left, &#right {
+		top: 0; bottom: 0;
+		width: 10px;
+		}
+			
+		&#left { left: 0; }
+		&#right { right: 0; }
+			
+	&#top, &#bottom {
+		left: 0; right: 0;
+		height: 10px;
+		}
+		
+		&#top { top: 0; }
+		&#bottom { bottom: 0; }
+	
+	&.product { 
+		background: $color-product; 
+		
+		/* 
+		&#left { animation: play-left-product .5s; }
+		&#right { animation: play-right-product .5s; }
+		&#top { animation: play-top-product .5s; }
+		&#bottom { animation: play-bottom-product .5s; } */
+	}
+	
+	&.graphic { 
+		background: $color-graphic; 
+			
+		/* 
+		&#left { animation: play-left-graphic .5s; }
+		&#right { animation: play-right-graphic .5s; }
+		&#top { animation: play-top-graphic .5s; }
+		&#bottom { animation: play-bottom-graphic .5s; } */
+	}
+		
+}
+
+
+/* ANIMATIONS */
+
+@keyframes topmask {
+	from { height: 10px; }
+	to { height: 0px; }
+}
+	
+@keyframes play-left-product {
+	1% { background: linear-gradient(to right, #000000 0%, #000000 100%, $color-product 100%, $color-product 100%); }
+	20% { background: linear-gradient(to right, #000000 0%, #000000 79%, $color-product 80%, $color-product 100%); }
+	40% { background: linear-gradient(to right, #000000 0%, #000000 59%, $color-product 60%, $color-product 100%); }
+	60% { background: linear-gradient(to right, #000000 0%, #000000 39%, $color-product 40%, $color-product 100%); }
+	80% { background: linear-gradient(to right, #000000 0%, #000000 19%, $color-product 20%, $color-product 100%); }
+	100% { background: linear-gradient(to right, #000000 0%, #000000 0%, $color-product 0%, $color-product 100%); }
+}
+
+@keyframes play-right-product {
+	1% { background: linear-gradient(to left, #000000 0%, #000000 100%, $color-product 100%, $color-product 100%); }
+	20% { background: linear-gradient(to left, #000000 0%, #000000 79%, $color-product 80%, $color-product 100%); }
+	40% { background: linear-gradient(to left, #000000 0%, #000000 59%, $color-product 60%, $color-product 100%); }
+	60% { background: linear-gradient(to left, #000000 0%, #000000 39%, $color-product 40%, $color-product 100%); }
+	80% { background: linear-gradient(to left, #000000 0%, #000000 19%, $color-product 20%, $color-product 100%); }
+	100% { background: linear-gradient(to left, #000000 0%, #000000 0%, $color-product 0%, $color-product 100%); }
+}
+
+@keyframes play-top-product {
+	1% { background: linear-gradient(to bottom, #000000 0%, #000000 100%, $color-product 100%, $color-product 100%); }
+	20% { background: linear-gradient(to bottom, #000000 0%, #000000 79%, $color-product 80%, $color-product 100%); }
+	40% { background: linear-gradient(to bottom, #000000 0%, #000000 59%, $color-product 60%, $color-product 100%); }
+	60% { background: linear-gradient(to bottom, #000000 0%, #000000 39%, $color-product 40%, $color-product 100%); }
+	80% { background: linear-gradient(to bottom, #000000 0%, #000000 19%, $color-product 20%, $color-product 100%); }
+	100% { background: linear-gradient(to bottom, #000000 0%, #000000 0%, $color-product 0%, $color-product 100%); }
+}
+
+@keyframes play-bottom-product {
+	1% { background: linear-gradient(to top, #000000 0%, #000000 100%, $color-product 100%, $color-product 100%); }
+	20% { background: linear-gradient(to top, #000000 0%, #000000 79%, $color-product 80%, $color-product 100%); }
+	40% { background: linear-gradient(to top, #000000 0%, #000000 59%, $color-product 60%, $color-product 100%); }
+	60% { background: linear-gradient(to top, #000000 0%, #000000 39%, $color-product 40%, $color-product 100%); }
+	80% { background: linear-gradient(to top, #000000 0%, #000000 19%, $color-product 20%, $color-product 100%); }
+	100% { background: linear-gradient(to top, #000000 0%, #000000 0%, $color-product 0%, $color-product 100%); }
+}
+
+
+
+
+@keyframes play-left-graphic {
+	1% { background: linear-gradient(to right, #000000 0%, #000000 100%, $color-graphic 100%, $color-graphic 100%); }
+	20% { background: linear-gradient(to right, #000000 0%, #000000 79%, $color-graphic 80%, $color-graphic 100%); }
+	40% { background: linear-gradient(to right, #000000 0%, #000000 59%, $color-graphic 60%, $color-graphic 100%); }
+	60% { background: linear-gradient(to right, #000000 0%, #000000 39%, $color-graphic 40%, $color-graphic 100%); }
+	80% { background: linear-gradient(to right, #000000 0%, #000000 19%, $color-graphic 20%, $color-graphic 100%); }
+	100% { background: linear-gradient(to right, #000000 0%, #000000 0%, $color-graphic 0%, $color-graphic 100%); }
+}
+
+@keyframes play-right-graphic {
+	1% { background: linear-gradient(to left, #000000 0%, #000000 100%, $color-graphic 100%, $color-graphic 100%); }
+	20% { background: linear-gradient(to left, #000000 0%, #000000 79%, $color-graphic 80%, $color-graphic 100%); }
+	40% { background: linear-gradient(to left, #000000 0%, #000000 59%, $color-graphic 60%, $color-graphic 100%); }
+	60% { background: linear-gradient(to left, #000000 0%, #000000 39%, $color-graphic 40%, $color-graphic 100%); }
+	80% { background: linear-gradient(to left, #000000 0%, #000000 19%, $color-graphic 20%, $color-graphic 100%); }
+	100% { background: linear-gradient(to left, #000000 0%, #000000 0%, $color-graphic 0%, $color-graphic 100%); }
+}
+
+@keyframes play-top-graphic {
+	1% { background: linear-gradient(to bottom, #000000 0%, #000000 100%, $color-graphic 100%, $color-graphic 100%); }
+	20% { background: linear-gradient(to bottom, #000000 0%, #000000 79%, $color-graphic 80%, $color-graphic 100%); }
+	40% { background: linear-gradient(to bottom, #000000 0%, #000000 59%, $color-graphic 60%, $color-graphic 100%); }
+	60% { background: linear-gradient(to bottom, #000000 0%, #000000 39%, $color-graphic 40%, $color-graphic 100%); }
+	80% { background: linear-gradient(to bottom, #000000 0%, #000000 19%, $color-graphic 20%, $color-graphic 100%); }
+	100% { background: linear-gradient(to bottom, #000000 0%, #000000 0%, $color-graphic 0%, $color-graphic 100%); }
+}
+
+@keyframes play-bottom-graphic {
+	1% { background: linear-gradient(to top, #000000 0%, #000000 100%, $color-graphic 100%, $color-graphic 100%); }
+	20% { background: linear-gradient(to top, #000000 0%, #000000 79%, $color-graphic 80%, $color-graphic 100%); }
+	40% { background: linear-gradient(to top, #000000 0%, #000000 59%, $color-graphic 60%, $color-graphic 100%); }
+	60% { background: linear-gradient(to top, #000000 0%, #000000 39%, $color-graphic 40%, $color-graphic 100%); }
+	80% { background: linear-gradient(to top, #000000 0%, #000000 19%, $color-graphic 20%, $color-graphic 100%); }
+	100% { background: linear-gradient(to top, #000000 0%, #000000 0%, $color-graphic 0%, $color-graphic 100%); }
+}
 
 
 
