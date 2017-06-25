@@ -1,3 +1,16 @@
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/339c9f");
+/* Teal: #00FFC8 - Purple: #352C7B - Chill: #14609C */
+/**
+ *   Default variables
+ *
+ *   While these can be set with JavaScript, it's probably
+ *   better and faster to just set them here, compile to
+ *   CSS and include that instead to use some of that
+ *   hardware-accelerated goodness.
+ */
+/* @import 'unslider/reset';
+@import 'unslider/dots'; */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -70,186 +83,1026 @@ label, input[type=button], input[type=submit], button {
   src: url("../font/Noe Display Black.eot?#iefix") format("embedded-opentype"), url("../font/Noe Display Black.woff") format("woff");
   /* Pretty Modern Browsers */ }
 
+@font-face {
+  font-family: 'NoeDisplayBlackItalic';
+  src: url("../font/Noe Display Black Italic.eot");
+  /* IE9 Compat Modes */
+  src: url("../font/Noe Display Black Italic.eot?#iefix") format("embedded-opentype"), url("../font/Noe Display Black Italic.woff") format("woff");
+  /* Pretty Modern Browsers */ }
+
+@font-face {
+  font-family: 'FFBauWebProMedium';
+  src: url("../font/339C9F_0_0.eot");
+  src: url("../font/339C9F_0_0.eot?#iefix") format("embedded-opentype"), url("../font/339C9F_0_0.woff2") format("woff2"), url("../font/339C9F_0_0.woff") format("woff"), url("../font/339C9F_0_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'FFBauWebPro';
+  src: url("../font/339C9F_1_0.eot");
+  src: url("../font/339C9F_1_0.eot?#iefix") format("embedded-opentype"), url("../font/339C9F_1_0.woff2") format("woff2"), url("../font/339C9F_1_0.woff") format("woff"), url("../font/339C9F_1_0.ttf") format("truetype"); }
+
 html {
-  border: 10px solid black;
-  background-color: black; }
+  /*	border: 10px solid black; */
+  background-color: black;
+  overflow-x: hidden; }
+
+html.product {
+  border-color: #7EDCD7; }
 
 body {
   background-color: #F5F5F5;
   min-height: 700px;
-  padding: 20px; }
+  padding: 20px;
+  overflow-x: hidden;
+  color: #000000; }
 
 /* FLOATING HEADER */
 header {
   position: fixed;
-  top: 16px;
-  left: 16px;
+  top: 30px;
+  left: 0px;
+  z-index: 14;
   width: 100%;
-  padding-right: 24px; }
+  font-family: "FFBauWebPro", sans-serif;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px; }
+  @media (max-width: 709px) {
+    header {
+      position: relative;
+      top: 0px; } }
   header span {
-    margin-left: 12px; }
-    @media (min-width: 1024px) {
+    margin-left: 24px;
+    float: left; }
+    @media (min-width: 710px) {
       header span {
-        margin-left: 100px; } }
+        margin-left: 120px; } }
+    @media (max-width: 709px) {
+      header span {
+        margin-left: 0px; } }
+    @media (min-width: 710px) and (max-width: 859px) {
+      header span {
+        margin-left: 70px; } }
   header ul {
+    z-index: 20;
+    position: relative;
     float: right;
-    padding: 0px 32px 0px 12px; }
-  header ul, header ul li {
+    padding: 0px 0px 0px 0px; }
+    @media (min-width: 710px) {
+      header ul {
+        margin-right: 32px; } }
+  header ul li {
     display: inline;
     list-style-type: none;
-    font-family: sans-serif;
-    text-align: right;
-    font-size: 12px; }
-    header ul a, header ul li a {
+    margin-top: 10px;
+    text-align: right; }
+    header ul li a {
       text-decoration: none;
-      font-weight: bold; }
+      color: #000000; }
+      header ul li a:hover {
+        background-color: #7EDCD7; }
+  header li:after {
+    font-size: 10px;
+    letter-spacing: 2px;
+    vertical-align: middle;
+    content: " / "; }
+  header li:last-child:after {
+    content: ""; }
+  header div.close {
+    text-align: center;
+    display: none;
+    width: 100%;
+    position: fixed;
+    z-index: 13; }
+    @media (min-width: 710px) and (max-width: 859px) {
+      header div.close {
+        text-align: left;
+        margin-left: 70px; } }
+    @media (max-width: 709px) {
+      header div.close {
+        text-align: left;
+        margin-left: 0px; } }
+    header div.close a {
+      background-color: black;
+      color: white;
+      padding: 3px;
+      text-decoration: none; }
 
 /* LOGO */
 h1 {
   text-align: left;
-  font-size: 60px;
-  font-family: 'NoeDisplayBlack', serif;
-  font-size: 32px; }
-  @media (max-width: 767px) {
+  font-family: "NoeDisplayBlack", serif;
+  font-size: 40px;
+  background: url(../img/product.jpg);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; }
+  @media (max-width: 709px) {
     h1 {
-      margin-top: 24px; } }
-  @media (min-width: 1024px) {
+      margin-top: 40px; } }
+  @media (min-width: 710px) {
     h1 {
-      font-size: 60px;
-      margin: 80px 0px 12px 80px; } }
+      font-size: 72px;
+      margin: 100px 0px 12px 100px; } }
+  @media (min-width: 710px) and (max-width: 859px) {
+    h1 {
+      margin-left: 50px; } }
 
-/* PRIMARY PARAGRAPHS */
+h2 {
+  font-family: "NoeDisplayBlackItalic", serif;
+  font-size: 40px; }
+  h2 a {
+    color: inherit;
+    text-decoration: none; }
+  @media (min-width: 710px) {
+    h2 {
+      font-size: 60px; } }
+
+/* PRIMARY TYPOGRAPHY STYLES AND PARAGRAPHS */
 p {
-  font-family: "Sentinel A", "Sentinel B";
+  font-family: "Quarto A", "Quarto B", serif;
   font-style: normal;
-  font-weight: 400; }
+  font-weight: 300; }
+  p span {
+    font-family: "Mercury SSm A", "Mercury SSm B";
+    font-weight: 400;
+    display: inline-block;
+    padding-left: 4px; }
+  p.intro span {
+    font-size: 50%;
+    vertical-align: top;
+    margin-top: -8px;
+    margin-left: -3px; }
 
 p.intro {
-  font-size: 24px;
+  font-size: 27px;
   line-height: 32px;
   margin-bottom: 18px;
-  text-indent: 32px; }
-  @media (min-width: 1024px) {
+  text-indent: 32px;
+  max-width: 540px; }
+  @media (min-width: 710px) {
     p.intro {
-      font-size: 32px;
+      font-size: 34px;
       line-height: 42px;
-      margin-left: 80px;
+      margin-left: 100px;
       margin-bottom: 24px;
       text-indent: 56px;
-      max-width: 700px; } }
+      max-width: 680px; } }
+  @media (min-width: 710px) and (max-width: 859px) {
+    p.intro {
+      margin-left: 50px;
+      max-width: 640px; } }
+  p.intro em {
+    font-style: normal;
+    cursor: pointer; }
+    p.intro em:hover {
+      border-bottom: 1px dotted #c2c2c2; }
+      p.intro em:hover span {
+        color: #7EDCD7; }
 
 p a {
   border-bottom: 3px solid black;
   text-decoration: none;
   font-style: italic;
-  color: black; }
+  color: #000000; }
+  p a.product-link:hover {
+    color: #7EDCD7;
+    border-color: #7EDCD7; }
+  p a.graphic-link:hover {
+    color: #E77D9B;
+    border-color: #E77D9B; }
 
 /* MAIN SECTIONS */
 section {
   margin-left: -20px;
-  margin-bottom: 80px; }
+  cursor: pointer; }
+  @media (min-width: 710px) {
+    section {
+      width: 780px;
+      margin-bottom: 80px; } }
+  @media (min-width: 710px) and (max-width: 859px) {
+    section {
+      width: 720px; } }
+  @media (max-width: 709px) {
+    section {
+      margin-top: 48px;
+      margin-bottom: 48px; } }
+  section.product .header {
+    background-image: url("../img/product6-white.jpg"); }
+  section.graphic .header {
+    background-image: url("../img/graphic-3.jpg"); }
   section div.header {
-    background-color: rgba(0, 0, 0, 0.5); }
-    @media (min-width: 1024px) {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-position-x: right; }
+    @media (min-width: 710px) {
       section div.header {
         width: 780px;
-        height: 240px;
+        height: 280px;
         margin-bottom: -100px; } }
+    @media (min-width: 710px) and (max-width: 859px) {
+      section div.header {
+        width: 110%; } }
+    @media (max-width: 709px) {
+      section div.header {
+        width: 110%;
+        height: 180px;
+        margin-top: 40px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 12px; } }
   section h2 {
-    font-family: 'NoeDisplayBlack', serif;
-    font-style: italic;
+    font-family: "NoeDisplayBlackItalic", serif;
     font-size: 32px; }
-    @media (min-width: 1024px) {
+    section h2 a {
+      color: inherit;
+      text-decoration: none; }
+    @media (min-width: 710px) {
       section h2 {
         font-size: 60px;
-        margin: 24px 0px 12px 100px; } }
-  @media (min-width: 1024px) {
+        margin: 24px 0px 12px 120px; } }
+    @media (min-width: 710px) and (max-width: 859px) {
+      section h2 {
+        margin-left: 70px; } }
+    @media (max-width: 709px) {
+      section h2 {
+        margin: 6px 0px 6px 24px; } }
+  @media (min-width: 710px) {
     section p {
       font-size: 24px;
-      margin: 0px 0px 12px 100px;
+      line-height: 32px;
+      margin: 0px 0px 12px 120px;
       max-width: 700px; } }
+  @media (min-width: 710px) and (max-width: 859px) {
+    section p {
+      margin-left: 70px;
+      max-width: 600px; } }
+  @media (max-width: 709px) {
+    section p {
+      font-size: 22px;
+      line-height: 28px;
+      margin: 0px 0px 6px 24px;
+      max-width: 540px; } }
+  section:hover.product .header {
+    /* background-image: url('../img/product6.png'); */ }
+  section:hover.product h2 {
+    color: #7EDCD7; }
+  section:hover.graphic h2 {
+    color: #E77D9B; }
+  section:hover.product a {
+    border-color: #7EDCD7; }
+  section:hover.graphic a {
+    border-color: #E77D9B; }
 
 /* ARTICLES */
-article h1 {
-  display: block;
-  margin: 48px auto 0px auto;
+article {
   text-align: center;
-  font-size: 72px;
-  font-style: italic; }
+  /* Teal: #00FFC8 - Purple: #352C7B - Chill: #14609C */
+  /**
+ *   Default variables
+ *
+ *   While these can be set with JavaScript, it's probably
+ *   better and faster to just set them here, compile to
+ *   CSS and include that instead to use some of that
+ *   hardware-accelerated goodness.
+ */
+  /* ARTICLE STYLES */ }
+  article div#close {
+    text-align: center;
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 6px;
+    left: 0px; }
+    article div#close a {
+      background-color: black;
+      color: white;
+      padding: 2px; }
+  article h1 {
+    display: inline-block;
+    margin: 48px auto 12px auto;
+    font-size: 72px;
+    font-family: "NoeDisplayBlackItalic", serif; }
+    @media (min-width: 710px) {
+      article h1 {
+        /* background: url(../img/h1stroke.png) repeat-x bottom left; 
+		line-height: 60px; */
+        margin-top: 120px; } }
+    @media (max-width: 709px) {
+      article h1 {
+        padding: 24px;
+        line-height: 72px;
+        text-align: center; } }
+  article summary {
+    text-align: center;
+    font-family: "FFBauWebPro", sans-serif;
+    font-size: 11px;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-left: 24px;
+    padding-right: 24px; }
+    article summary span {
+      display: block;
+      margin-top: 4px;
+      font-family: "Quarto A", "Quarto B", serif;
+      font-style: italic;
+      text-transform: none;
+      color: #ABABAB;
+      font-size: 13px;
+      letter-spacing: 1px; }
+  article div#description {
+    display: block;
+    max-width: 720px;
+    margin: 48px auto 0px auto;
+    padding: 20px;
+    border: 3px solid black; }
+    @media (min-width: 710px) {
+      article div#description {
+        -webkit-column-count: 2;
+        /* Chrome, Safari, Opera */
+        -moz-column-count: 2;
+        /* Firefox */
+        -webkit-column-gap: 40px;
+        /* Chrome, Safari, Opera */
+        -moz-column-gap: 40px;
+        /* Firefox */
+        -webkit-column-rule: 1px solid black;
+        /* Chrome, Safari, Opera */
+        -moz-column-rule: 1px solid black;
+        /* Firefox */
+        column-rule: 1px solid black; } }
+    @media (min-width: 710px) and (max-width: 859px) {
+      article div#description {
+        margin: 48px auto 0 auto;
+        max-width: 80%; } }
+    @media (max-width: 709px) {
+      article div#description {
+        margin: 24px; } }
+    article div#description p {
+      font-size: 14px;
+      line-height: 20px;
+      text-align: left;
+      font-family: "FFBauWebPro", sans-serif; }
+      article div#description p em {
+        font-weight: 600; }
+  article img {
+    width: 100%;
+    position: relative; }
+  article div.content {
+    max-width: 800px;
+    margin: 60px auto 0px auto;
+    text-align: left; }
+    @media (min-width: 710px) {
+      article div.content {
+        padding: 0px 60px 0px 60px; } }
+    @media (max-width: 709px) {
+      article div.content {
+        padding: 0px 24px 0px 24px; } }
+    article div.content hr {
+      width: 50%;
+      display: block;
+      margin: 100px auto 100px auto;
+      /* height: 10px;
+		background-color: $color-product;
+		color: $color-product;
+		border: none; */
+      background: url(../img/squiggly@2x.png) top left repeat-x;
+      height: 6px;
+      background-size: 207px 6px;
+      border: none; }
+      @media (max-width: 709px) {
+        article div.content hr {
+          margin: 60px auto 60px auto; } }
+    article div.content h3 {
+      width: 100%;
+      padding: 0px;
+      font-size: 40px;
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: "FF Bau Pro Medium", "FFBauWebPro", sans-serif; }
+    article div.content img {
+      margin: 0 auto 0 auto; }
+      article div.content img.header {
+        width: 100%;
+        margin: 40px auto 60px auto; }
+      article div.content img.twoup {
+        height: 250px;
+        margin-right: 12px;
+        width: auto; }
+      article div.content img.center {
+        margin: 0px auto 0px auto;
+        display: block; }
+      article div.content img.space {
+        margin-top: 40px; }
+    article div.content video {
+      margin: 0 auto 0 auto;
+      display: block; }
+      article div.content video.phone {
+        max-width: 320px; }
+    article div.content p {
+      font-size: 18px;
+      line-height: 24px;
+      max-width: 600px;
+      font-family: "FFBauWebPro", sans-serif; }
+      article div.content p.left {
+        margin: 0 0 0 0;
+        text-align: left; }
+      article div.content p.center {
+        margin: 0 auto 0 auto;
+        text-align: center; }
+    article div.content p.intro {
+      font-family: "Quarto A", "Quarto B", serif;
+      text-align: center;
+      font-size: 24px;
+      line-height: 32px;
+      text-indent: 0px;
+      margin: 20px auto 40px auto; }
+    article div.content div.slider ul {
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px; }
+    article div.content div.endnote {
+      clear: both;
+      text-align: center;
+      font-family: "Quarto A", "Quarto B", serif;
+      font-style: italic;
+      font-size: 20px;
+      color: #c2c2c2;
+      margin: 40px auto 12px auto; }
+      article div.content div.endnote a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid #c2c2c2; }
+        article div.content div.endnote a:hover {
+          border: none; }
+  article div.grid {
+    display: block;
+    width: 100%;
+    box-sizing: border-box; }
+    article div.grid .half-fit {
+      width: 50%;
+      float: left; }
+      @media (max-width: 709px) {
+        article div.grid .half-fit {
+          width: 100%; } }
+    article div.grid .half-space {
+      width: 48%;
+      float: right;
+      box-sizing: border-box; }
+      article div.grid .half-space:first-child {
+        margin-right: 12px;
+        float: left; }
+      @media (max-width: 709px) {
+        article div.grid .half-space {
+          width: 100%;
+          margin-right: 0px; } }
+    article div.grid .two-third {
+      width: 66%;
+      float: left; }
+    article div.grid .one-third {
+      width: 33%;
+      float: left; }
+    article div.grid .new-line {
+      clear: both;
+      margin-top: 12px;
+      height: 20px; }
+    article div.grid .background {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-align: center center;
+      height: 320px; }
+    article div.grid .full {
+      clear: both;
+      margin-top: 12px;
+      width: 100%;
+      height: 400px; }
+  article div.endclose {
+    width: 100%;
+    margin: 0px auto 80px auto;
+    padding: 24px;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "FFBauWebPro", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
+    article div.endclose a {
+      color: #000000;
+      text-decoration: none;
+      font-size: 12px;
+      padding: 10px 6px 6px 6px;
+      border: 1px solid black; }
+      article div.endclose a:hover {
+        background-color: #000000;
+        color: white; }
 
 /* TEXT BREAK */
 div.blurb {
   min-height: 150px;
-  color: #A7A7A7;
+  color: #c2c2c2;
   margin-left: -20px; }
-  @media (min-width: 1024px) {
+  @media (min-width: 710px) {
     div.blurb {
       width: 880px;
       padding-top: 40px; } }
+  @media (min-width: 710px) and (max-width: 859px) {
+    div.blurb {
+      width: 100%; } }
+  @media (max-width: 709px) {
+    div.blurb {
+      margin-top: 48px;
+      margin-bottom: 48px;
+      margin-left: 12px;
+      display: none; } }
   div.blurb p {
-    font-family: 'NTR', sans-serif;
-    font-size: 14px;
+    font-family: "FFBauWebPro", sans-serif;
+    font-size: 12px;
     line-height: 18px; }
-    @media (min-width: 1024px) {
+    @media (min-width: 710px) {
       div.blurb p {
         width: 300px;
         float: left;
         margin-right: 12px; } }
+    @media (min-width: 710px) and (max-width: 859px) {
+      div.blurb p {
+        width: 30%; } }
+    @media (max-width: 709px) {
+      div.blurb p {
+        margin-right: 12px; } }
+  div.blurb.selected p {
+    color: #8f8f8f; }
 
 /* ASIDES */
 aside {
   background: url(../img/squiggly@2x.png) top left repeat-x, url(../img/squiggly@2x.png) bottom left repeat-x;
   background-size: 207px 6px;
-  font-family: 'NTR', sans-serif;
+  font-family: "FFBauWebPro", sans-serif;
   min-height: 50px;
   padding-top: 20px;
   padding-bottom: 18px;
   margin-right: 32px;
   width: 207px;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 18px;
-  color: #D8D8D8;
+  color: #c2c2c2;
   float: left; }
+  aside strong {
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 11px;
+    text-transform: uppercase; }
   aside.left {
     text-align: left; }
   aside.right {
     text-align: right; }
+  aside.selected {
+    color: #8f8f8f; }
+    aside.selected strong {
+      background-color: #7EDCD7;
+      color: white; }
   aside#topnote {
     display: none; }
-    @media (min-width: 1024px) {
+    @media (min-width: 710px) {
       aside#topnote {
         display: block;
         width: 280px;
         position: absolute;
         top: 180px;
         left: 840px; } }
+    @media (min-width: 710px) and (max-width: 859px) {
+      aside#topnote {
+        display: none; } }
+  aside.edgenote {
+    display: none; }
+    @media (min-width: 710px) {
+      aside.edgenote {
+        display: block;
+        width: 210px;
+        position: absolute;
+        left: 840px;
+        margin-top: -380px; } }
+    @media (min-width: 710px) and (max-width: 859px) {
+      aside.edgenote {
+        display: none; } }
+
+div.divider {
+  background: url(../img/squiggly@2x.png) top left repeat-x;
+  height: 6px;
+  background-size: 207px 6px; }
+  @media (min-width: 710px) {
+    div.divider {
+      margin-left: 90px;
+      max-width: 670px; } }
+  @media (min-width: 710px) and (max-width: 859px) {
+    div.divider {
+      margin-left: 40px; } }
+  @media (max-width: 709px) {
+    div.divider {
+      margin-bottom: 40px; } }
+
+/* LISTS */
+h3 {
+  font-family: "NoeDisplayBlackItalic", serif;
+  font-size: 24px; }
+  @media (max-width: 709px) {
+    h3 {
+      margin: 0px 0px -12px 0px; } }
+
+@media (min-width: 710px) {
+  div.column {
+    width: 320px;
+    float: left;
+    margin-top: 40px;
+    margin-right: 36px;
+    margin-bottom: 40px; }
+    div.column.first {
+      margin-left: 90px; } }
+    @media (min-width: 710px) and (min-width: 710px) and (max-width: 859px) {
+      div.column.first {
+        margin-left: 40px; } }
+  @media (min-width: 710px) and (min-width: 710px) and (max-width: 859px) {
+    div.column {
+      width: 300px; } }
+
+@media (max-width: 709px) {
+  div.column {
+    margin: 0px 0 40px 0px;
+    max-width: 300px;
+    float: left; }
+    div.column.first {
+      margin-right: 24px; } }
+
+div.column ul, div.column ol {
+  max-width: 550px;
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Quarto A", "Quarto B", serif; }
+  div.column ul li, div.column ol li {
+    margin-bottom: 8px;
+    margin-left: 24px; }
+
+div.column a {
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  font-style: italic;
+  color: #000000; }
+
+/* FOOTER */
+footer {
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #000000;
+  min-height: 700px;
+  color: white; }
+  @media (min-width: 710px) {
+    footer {
+      padding: 36px;
+      padding-bottom: 72px; } }
+  footer img.profiletop {
+    z-index: 6;
+    position: relative; }
+    @media (min-width: 710px) {
+      footer img.profiletop {
+        position: absolute;
+        left: 780px;
+        top: 140px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); } }
+    @media (min-width: 710px) and (max-width: 859px) {
+      footer img.profiletop {
+        display: none; } }
+    @media (max-width: 709px) {
+      footer img.profiletop {
+        margin-left: 24px;
+        margin-right: 24px;
+        margin-bottom: 12px;
+        float: left;
+        width: 120px; } }
+  @media (min-width: 710px) {
+    footer img.profilepic {
+      position: absolute;
+      top: 0px;
+      left: 650px;
+      opacity: 0.5;
+      z-index: 5; } }
+  @media (min-width: 710px) and (max-width: 859px) {
+    footer img.profilepic {
+      left: 500px; } }
+  @media (max-width: 709px) {
+    footer img.profilepic {
+      position: absolute;
+      right: 0px;
+      float: right;
+      width: 200px;
+      height: 400px;
+      opacity: 0.3; } }
+  footer h2 {
+    color: white; }
+    @media (min-width: 710px) {
+      footer h2 {
+        margin-left: 90px;
+        margin-top: 24px; } }
+    @media (min-width: 710px) and (max-width: 859px) {
+      footer h2 {
+        margin-left: 40px; } }
+    @media (max-width: 709px) {
+      footer h2 {
+        margin-left: 24px;
+        margin-top: 24px;
+        margin-bottom: 12px; } }
+  footer p {
+    position: relative;
+    color: white;
+    z-index: 7; }
+    @media (min-width: 710px) {
+      footer p {
+        margin-left: 90px;
+        max-width: 550px;
+        margin-top: 24px;
+        /* Born and raised in N: */
+        font-size: 22px;
+        line-height: 36px; } }
+    @media (min-width: 710px) and (max-width: 859px) {
+      footer p {
+        margin-left: 40px; } }
+    @media (max-width: 709px) {
+      footer p {
+        margin-left: 24px;
+        max-width: 560px;
+        font-size: 20px;
+        line-height: 27px;
+        margin-bottom: 12px;
+        text-indent: 0px;
+        margin-right: 24px; } }
+    footer p a {
+      color: white;
+      border-color: white; }
+    footer p.copyright {
+      font-size: 16px;
+      color: #999;
+      font-style: italic; }
+      footer p.copyright a {
+        border-bottom: none; }
+  footer hr {
+    border: none;
+    background-color: #333;
+    height: 1px; }
+    @media (min-width: 710px) {
+      footer hr {
+        max-width: 700px;
+        margin: 80px 0 80px 90px; } }
+    @media (max-width: 709px) {
+      footer hr {
+        margin: 80px 0 80px 24px; } }
 
 /* BOXES */
 div.box {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.15); }
+  display: none; }
   div.box.small {
     width: 60px;
     height: 60px; }
   div.box.large {
     width: 120px;
-    height: 120px; }
-  @media (min-width: 1024px) {
+    height: 120px;
+    background: url(../img/graphix2.png);
+    background-size: contain;
+    opacity: 0.5; }
+  @media (min-width: 710px) {
     div.box#box-1 {
       top: -30px;
-      left: 600px; }
+      left: 600px;
+      background-color: rgba(0, 0, 0, 0.15); }
     div.box#box-2 {
       top: 320px;
-      left: 840px; }
+      left: 840px;
+      background-color: rgba(0, 0, 0, 0.15); }
     div.box#box-3 {
       top: 400px;
-      left: 0px; }
+      left: 0px;
+      background-color: rgba(0, 0, 0, 0.15); }
     div.box#box-4 {
       top: 600px;
-      left: 900px; }
+      left: 900px;
+      background-color: rgba(0, 0, 0, 0.15); }
     div.box#box-5 {
       top: 540px;
-      right: 10px; } }
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.15); }
+    div.box#stroke-1 {
+      top: 120px;
+      left: 720px;
+      /* background-image: url(../img/Line.png); */
+      width: 100px;
+      height: 2px;
+      background-color: black;
+      transform: rotate(115deg); }
+    div.box#stroke-2 {
+      top: 600px;
+      left: 920px;
+      /* background-image: url(../img/Line.png); */
+      width: 100px;
+      height: 2px;
+      background-color: black;
+      transform: rotate(78deg); } }
+
+ol.numbers {
+  position: absolute;
+  top: 600px;
+  right: 80px; }
+  @media (min-width: 710px) and (max-width: 859px) {
+    ol.numbers {
+      right: 40px; } }
+  @media (max-width: 709px) {
+    ol.numbers {
+      right: 5%;
+      opacity: 0.5; } }
+  ol.numbers li {
+    font-size: 10px;
+    list-style-type: none;
+    margin-bottom: 180px;
+    font-family: "Mercury SSm A", "Mercury SSm B";
+    font-style: italic;
+    font-weight: 400; }
+
+/* Hover effects */
+html.product-hover div.illus {
+  background-color: #7EDCD7 !important; }
+
+html.product-hover p.intro span {
+  color: #7EDCD7; }
+
+html.product-hover header span {
+  color: #7EDCD7; }
+
+html.graphic-hover div.illus {
+  background-color: #E77D9B !important; }
+
+html.graphic-hover p.intro span {
+  color: #E77D9B; }
+
+html.graphic-hover header span {
+  color: #E77D9B; }
+
+div.border {
+  background: black;
+  position: fixed;
+  animation-fill-mode: both;
+  animation-delay: .1s;
+  z-index: 16; }
+  @media (max-width: 709px) {
+    div.border {
+      display: none; } }
+  div.border#left, div.border#right {
+    top: 0;
+    bottom: 0;
+    width: 10px; }
+  div.border#left {
+    left: 0; }
+  div.border#right {
+    right: 0; }
+  div.border#top, div.border#bottom {
+    left: 0;
+    right: 0;
+    height: 10px; }
+  div.border#top {
+    top: 0; }
+  div.border#bottom {
+    bottom: 0; }
+  div.border.product {
+    background: #7EDCD7;
+    /* 
+		&#left { animation: play-left-product .5s; }
+		&#right { animation: play-right-product .5s; }
+		&#top { animation: play-top-product .5s; }
+		&#bottom { animation: play-bottom-product .5s; } */ }
+  div.border.graphic {
+    background: #E77D9B;
+    /* 
+		&#left { animation: play-left-graphic .5s; }
+		&#right { animation: play-right-graphic .5s; }
+		&#top { animation: play-top-graphic .5s; }
+		&#bottom { animation: play-bottom-graphic .5s; } */ }
+
+/* ANIMATIONS */
+@keyframes topmask {
+  from {
+    height: 10px; }
+  to {
+    height: 0px; } }
+
+@keyframes play-left-product {
+  1% {
+    background: linear-gradient(to right, #000000 0%, #000000 100%, #7EDCD7 100%, #7EDCD7 100%); }
+  20% {
+    background: linear-gradient(to right, #000000 0%, #000000 79%, #7EDCD7 80%, #7EDCD7 100%); }
+  40% {
+    background: linear-gradient(to right, #000000 0%, #000000 59%, #7EDCD7 60%, #7EDCD7 100%); }
+  60% {
+    background: linear-gradient(to right, #000000 0%, #000000 39%, #7EDCD7 40%, #7EDCD7 100%); }
+  80% {
+    background: linear-gradient(to right, #000000 0%, #000000 19%, #7EDCD7 20%, #7EDCD7 100%); }
+  100% {
+    background: linear-gradient(to right, #000000 0%, #000000 0%, #7EDCD7 0%, #7EDCD7 100%); } }
+
+@keyframes play-right-product {
+  1% {
+    background: linear-gradient(to left, #000000 0%, #000000 100%, #7EDCD7 100%, #7EDCD7 100%); }
+  20% {
+    background: linear-gradient(to left, #000000 0%, #000000 79%, #7EDCD7 80%, #7EDCD7 100%); }
+  40% {
+    background: linear-gradient(to left, #000000 0%, #000000 59%, #7EDCD7 60%, #7EDCD7 100%); }
+  60% {
+    background: linear-gradient(to left, #000000 0%, #000000 39%, #7EDCD7 40%, #7EDCD7 100%); }
+  80% {
+    background: linear-gradient(to left, #000000 0%, #000000 19%, #7EDCD7 20%, #7EDCD7 100%); }
+  100% {
+    background: linear-gradient(to left, #000000 0%, #000000 0%, #7EDCD7 0%, #7EDCD7 100%); } }
+
+@keyframes play-top-product {
+  1% {
+    background: linear-gradient(to bottom, #000000 0%, #000000 100%, #7EDCD7 100%, #7EDCD7 100%); }
+  20% {
+    background: linear-gradient(to bottom, #000000 0%, #000000 79%, #7EDCD7 80%, #7EDCD7 100%); }
+  40% {
+    background: linear-gradient(to bottom, #000000 0%, #000000 59%, #7EDCD7 60%, #7EDCD7 100%); }
+  60% {
+    background: linear-gradient(to bottom, #000000 0%, #000000 39%, #7EDCD7 40%, #7EDCD7 100%); }
+  80% {
+    background: linear-gradient(to bottom, #000000 0%, #000000 19%, #7EDCD7 20%, #7EDCD7 100%); }
+  100% {
+    background: linear-gradient(to bottom, #000000 0%, #000000 0%, #7EDCD7 0%, #7EDCD7 100%); } }
+
+@keyframes play-bottom-product {
+  1% {
+    background: linear-gradient(to top, #000000 0%, #000000 100%, #7EDCD7 100%, #7EDCD7 100%); }
+  20% {
+    background: linear-gradient(to top, #000000 0%, #000000 79%, #7EDCD7 80%, #7EDCD7 100%); }
+  40% {
+    background: linear-gradient(to top, #000000 0%, #000000 59%, #7EDCD7 60%, #7EDCD7 100%); }
+  60% {
+    background: linear-gradient(to top, #000000 0%, #000000 39%, #7EDCD7 40%, #7EDCD7 100%); }
+  80% {
+    background: linear-gradient(to top, #000000 0%, #000000 19%, #7EDCD7 20%, #7EDCD7 100%); }
+  100% {
+    background: linear-gradient(to top, #000000 0%, #000000 0%, #7EDCD7 0%, #7EDCD7 100%); } }
+
+@keyframes play-left-graphic {
+  1% {
+    background: linear-gradient(to right, #000000 0%, #000000 100%, #E77D9B 100%, #E77D9B 100%); }
+  20% {
+    background: linear-gradient(to right, #000000 0%, #000000 79%, #E77D9B 80%, #E77D9B 100%); }
+  40% {
+    background: linear-gradient(to right, #000000 0%, #000000 59%, #E77D9B 60%, #E77D9B 100%); }
+  60% {
+    background: linear-gradient(to right, #000000 0%, #000000 39%, #E77D9B 40%, #E77D9B 100%); }
+  80% {
+    background: linear-gradient(to right, #000000 0%, #000000 19%, #E77D9B 20%, #E77D9B 100%); }
+  100% {
+    background: linear-gradient(to right, #000000 0%, #000000 0%, #E77D9B 0%, #E77D9B 100%); } }
+
+@keyframes play-right-graphic {
+  1% {
+    background: linear-gradient(to left, #000000 0%, #000000 100%, #E77D9B 100%, #E77D9B 100%); }
+  20% {
+    background: linear-gradient(to left, #000000 0%, #000000 79%, #E77D9B 80%, #E77D9B 100%); }
+  40% {
+    background: linear-gradient(to left, #000000 0%, #000000 59%, #E77D9B 60%, #E77D9B 100%); }
+  60% {
+    background: linear-gradient(to left, #000000 0%, #000000 39%, #E77D9B 40%, #E77D9B 100%); }
+  80% {
+    background: linear-gradient(to left, #000000 0%, #000000 19%, #E77D9B 20%, #E77D9B 100%); }
+  100% {
+    background: linear-gradient(to left, #000000 0%, #000000 0%, #E77D9B 0%, #E77D9B 100%); } }
+
+@keyframes play-top-graphic {
+  1% {
+    background: linear-gradient(to bottom, #000000 0%, #000000 100%, #E77D9B 100%, #E77D9B 100%); }
+  20% {
+    background: linear-gradient(to bottom, #000000 0%, #000000 79%, #E77D9B 80%, #E77D9B 100%); }
+  40% {
+    background: linear-gradient(to bottom, #000000 0%, #000000 59%, #E77D9B 60%, #E77D9B 100%); }
+  60% {
+    background: linear-gradient(to bottom, #000000 0%, #000000 39%, #E77D9B 40%, #E77D9B 100%); }
+  80% {
+    background: linear-gradient(to bottom, #000000 0%, #000000 19%, #E77D9B 20%, #E77D9B 100%); }
+  100% {
+    background: linear-gradient(to bottom, #000000 0%, #000000 0%, #E77D9B 0%, #E77D9B 100%); } }
+
+@keyframes play-bottom-graphic {
+  1% {
+    background: linear-gradient(to top, #000000 0%, #000000 100%, #E77D9B 100%, #E77D9B 100%); }
+  20% {
+    background: linear-gradient(to top, #000000 0%, #000000 79%, #E77D9B 80%, #E77D9B 100%); }
+  40% {
+    background: linear-gradient(to top, #000000 0%, #000000 59%, #E77D9B 60%, #E77D9B 100%); }
+  60% {
+    background: linear-gradient(to top, #000000 0%, #000000 39%, #E77D9B 40%, #E77D9B 100%); }
+  80% {
+    background: linear-gradient(to top, #000000 0%, #000000 19%, #E77D9B 20%, #E77D9B 100%); }
+  100% {
+    background: linear-gradient(to top, #000000 0%, #000000 0%, #E77D9B 0%, #E77D9B 100%); } }
 
 /* Mobile first queries */
 /* Larger than mobile */
